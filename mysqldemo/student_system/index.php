@@ -5,7 +5,7 @@ $userName = getSession('name','students');
 //查询数据库
 //$_POST['searchName'] 不为空则查询搜索用户的数据，$_POST['searchName']为空则查询所有用户的数据
 if (!empty($_POST['searchName'])){
-    $sql = "SELECT name, info FROM student
+    $sql = "SELECT name, info, face FROM student
             WHERE name = '{$_POST['searchName']}'";
     $result = query($sql);
 }else {
@@ -16,13 +16,14 @@ if (!empty($_POST['searchName'])){
 //遍历学生数据
 
 //转账
-//判断用户是否登陆，是则进行转账操作，否则进行登陆
-if (empty($userName)){
-    header('location:login.php');
-    exit;
-}
+
 //判断是否为post提交
 if (!empty($_POST['transferName'])){
+    //判断用户是否登陆，是则进行转账操作，否则进行登陆
+    if (empty($userName)){
+        header('location:login.php');
+        exit;
+    }
     //接收post提交的转账数据
     $transferName = htmlentities($_POST['transferName']);
     $money  = htmlentities($_POST['money']);
@@ -84,7 +85,7 @@ require 'header.php';
                           </select>
                         </p>
                         <br />
-                        <p>转账金额：<input type="text" name="money" class="form-control" id="exampleInputEmail1" placeholder="请输入数字"></p>
+                        <p>转账金额：<input type="text" name="money" class="form-control" id="exampleInputEmail1" placeholder="请输入数字"> </p>
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-primary" name="submit" id="submit" onclick="show(this)">确认转账</button>

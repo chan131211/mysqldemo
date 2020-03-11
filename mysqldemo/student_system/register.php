@@ -71,6 +71,9 @@ require 'header.php';
     <!-- 注册页面 -->
     <div class="container projects">
         <div class="projects-header page-header" >
+            <div style="margin-left: 600px;">
+                <a href="index.php"><button type="button"  class="btn btn-primary btn-default" data-toggle="modal">  首页  </button></a>
+            </div>
             <h3>注册</h3>
             <a href="login.php"><button type="button"  class="btn btn-primary btn-default" data-toggle="modal">  去登录  </button></a>
 
@@ -119,7 +122,7 @@ require 'header.php';
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                             <button type="submit" class="btn btn-primary btn-default">注册</button>
-                            <button type="submit" class="btn btn-default">重置</button>
+                            <button type="reset" class="btn btn-default">重置</button>
                         </div>
                     </div>
                 </form>

@@ -27,8 +27,10 @@ require 'header.php';
 ?>
     <!--登录框-->
     <!-- 登录页面 -->
-
     <div class="projects-header page-header" >
+        <div style="margin-left: 600px;">
+            <a href="index.php"><button type="button"  class="btn btn-primary btn-default" data-toggle="modal">  首页  </button></a>
+        </div>
         <h3>登录</h3>
         <a href="register.php"><button type="button"  class="btn btn-primary btn-default" data-toggle="modal">  去注册  </button></a>
     </div>
